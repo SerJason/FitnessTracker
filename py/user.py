@@ -1,5 +1,9 @@
-print ('Content-Type: text/plain')
-print ('')
+def isNameOkay(name):
+	if (len(name) == 0):
+		isNameOkayName = False
+	else:
+		isNameOkayName = True
+	return isNameOkayName
 
 def isUserNameOkay(userName):
 	if (len(userName) == 0):
@@ -17,6 +21,7 @@ def saveName(name):
 def getName():
 	file = open('name.txt','r')
 	name = file.readline()
+	file.close()
 	return name
 
 def saveUserName(userName):
@@ -28,13 +33,5 @@ def saveUserName(userName):
 def getUserName():
 	file = open('userName.txt','r')
 	userName = file.readline()
+	file.close()
 	return userName
-
-print(isUserNameOkay(""))
-print(isUserNameOkay("Larry"))
-
-print(saveName("Jason"))
-print(getName())
-
-print(saveUserName("SerJason"))
-print(getUserName())
