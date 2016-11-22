@@ -1,16 +1,16 @@
 def isNameOkay(name):
-	if (len(name) == 0):
+	if ((name == None) or (len(name) == 0)):
 		isNameOkayName = False
 	else:
 		isNameOkayName = True
 	return isNameOkayName
 
-def isUserNameOkay(userName):
-	if (len(userName) == 0):
-		isUserNameOkayUserName = False
+def isUsernameOkay(username):
+	if ((username == None) or (len(username) == 0)):
+		isUsernameOkayUsername = False
 	else:
-		isUserNameOkayUserName = True
-	return isUserNameOkayUserName
+		isUsernameOkayUsername = True
+	return isUsernameOkayUsername
 
 def saveName(name):
 	file = open('name.txt','w')
@@ -24,14 +24,14 @@ def getName():
 	file.close()
 	return name
 
-def saveUserName(userName):
-	file = open('userName.txt','w')
-	file.write(userName)
+def saveUsername(username):
+	file = open('username.txt','w')
+	file.write(username)
 	file.close()
 	return True
 
-def getUserName():
-	file = open('userName.txt','r')
-	userName = file.readline()
+def getUsername():
+	file = open('username.txt','r')
+	username = file.readline()
 	file.close()
-	return userName
+	return username

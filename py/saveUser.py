@@ -1,26 +1,23 @@
 import cgi
+import user
 
 form = cgi.FieldStorage()
 
-name = form['name']
-userName = form['userName']
+name = form.getvalue('name')
+username = form.getvalue('username')
 
 isError = False
-
-if isNameOkay(name) == False:
+if user.isNameOkay(name) == False:
     isError = True
-
-if isUserNameOkay(userName) == False:
+if user.isUsernameOkay(username) == False:
     isError = True
 
 print ('Content-Type: text/plain')
-print ('')
-
-print(isUserNameOkay(""))
-print(isUserNameOkay("Larry"))
-
-print(saveName("Jason"))
-print(getName())
-
-print(saveUserName("SerJason"))
-print(getUserName())
+if isError == False:
+    user.saveName(name)
+    user.saveUsername(username)
+    print("Location: ../html/usersaved.html")
+    print ('')
+else:# isError == True:
+    print ('')
+    print("The name or username is not valid.")
