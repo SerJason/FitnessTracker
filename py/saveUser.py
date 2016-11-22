@@ -12,7 +12,7 @@ if user.isNameOkay(name) == False:
 if user.isUsernameOkay(username) == False:
     isError = True
 
-print ('Content-Type: text/plain')
+print ('Content-Type: text/html')
 if isError == False:
     user.saveName(name)
     user.saveUsername(username)
