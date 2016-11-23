@@ -20,4 +20,4 @@ if isError == False:
     print ('')
 else:# isError == True:
     print ('')
-    print("The name or username is not valid.")
+    print("The name or username is not valid. <a href='javascript:history.back()''>Go Back</a>")

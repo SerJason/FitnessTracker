@@ -4,6 +4,13 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
 		<script type="text/javascript" src="../js/script.js"></script>
 		<link type="text/css" href="../css/style.css" />
+		<script type="text/javascript">
+			$(function () {
+				User.jqXHR.done(function () {
+					$("body").append("<p>Welcome " + User.name + "!</p>");
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<h1>Fitness Tracker Home</h1>
