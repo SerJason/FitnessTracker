@@ -5,9 +5,11 @@
 		<script type="text/javascript" src="../js/script.js"></script>
 		<link type="text/css" href="../css/style.css" />
 		<script type="text/javascript">
-			setTimeout(function () {
-				$("body").append("<p>Welcome " + User.name + "!</p>");
-			}, "500");
+			$(function () {
+				User.jqXHR.done(function () {
+					$("body").append("<p>Welcome " + User.name + "!</p>");
+				});
+			});
 		</script>
 	</head>
 	<body>
